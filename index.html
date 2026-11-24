@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security: GitHub Pages tidak bisa set custom HTTP header, jadi CSP & Referrer dipasang lewat meta.
+       Catatan: tanpa upgrade-insecure-requests agar server lokal http://127.0.0.1 tetap jalan lancar. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://abdulfattah105-ne.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Abdul Fattah — Portofolio & Link Hub</title>
+  <meta name="description" content="Portofolio Abdul Fattah — Mahasiswa TRKJ Politeknik IDN Bogor. Redesign link hub & website untuk kampus, pesantren, sekolah, dan bisnis." />
+  <meta name="theme-color" content="#07070d" />
+  <meta property="og:title" content="Abdul Fattah — Portofolio & Link Hub" />
+  <meta property="og:description" content="Redesign link hub & website yang terasa hidup." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='800' font-size='26' fill='white'%3EAF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-mode="portfolio">
+  <!-- Background layers -->
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grid-lines"></div>
+    <div class="grain"></div>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="Beranda">
+      <span class="brand-mark">AF</span>
+      <span class="brand-text">Abdul Fattah</span>
+    </a>
+
+    <nav class="nav-links only-portfolio" aria-label="Navigasi utama">
+      <a href="#proyek">Proyek</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <div class="mode-switch" role="tablist" aria-label="Pilih mode tampilan">
+      <span class="mode-pill" aria-hidden="true"></span>
+      <button role="tab" data-set-mode="portfolio" aria-selected="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z M4 9h16" /></svg>
+        Portofolio
+      </button>
+      <button role="tab" data-set-mode="hub" aria-selected="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1 M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1" /></svg>
+        Link Hub
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ PORTFOLIO VIEW ============ -->
+  <main id="portfolio-view" class="view view-portfolio">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <span class="eyebrow reveal"><span class="dot"></span> Tersedia untuk proyek & kolaborasi</span>
+        <h1 class="reveal">
+          Halo, saya <span class="name-hl">Abdul Fattah</span>.<br />
+          Saya merancang ulang <span class="grad-text">link hub</span> &amp; web yang
+          <span class="typer" id="typer">terasa hidup</span><span class="caret">|</span>
+        </h1>
+        <p class="lead reveal">
+          Mahasiswa <strong>TRKJ Politeknik IDN Bogor</strong> (angkatan 2024). Saya suka mengubah
+          kumpulan tautan biasa menjadi halaman yang rapi, cepat, dan enak dilihat di HP —
+          untuk kampus, pesantren, sekolah, sampai toko online.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#proyek" class="btn btn-primary">
+            Lihat Proyek
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14 M5 12l7 7 7-7" /></svg>
+          </a>
+          <button class="btn btn-ghost" data-set-mode="hub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1 M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1" /></svg>
+            Buka Mode Link Hub
+          </button>
+        </div>
+        <ul class="hero-meta reveal">
+          <li><span>📍</span> Bogor, Indonesia</li>
+          <li><span>🎓</span> Politeknik IDN Bogor</li>
+          <li><span>🛠️</span> HTML · CSS · JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="phones" id="hero-phones"><!-- diisi JS --></div>
+        <div class="float-chip c1">✨ Redesign</div>
+        <div class="float-chip c2">📱 Mobile-first</div>
+        <div class="float-chip c3">⚡ GitHub Pages</div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Link Hub</span><i>✦</i><span>Landing Page</span><i>✦</i><span>Redesign UI</span><i>✦</i>
+        <span>Mobile-first</span><i>✦</i><span>Responsive</span><i>✦</i><span>Computer Networking</span><i>✦</i>
+        <span>Link Hub</span><i>✦</i><span>Landing Page</span><i>✦</i><span>Redesign UI</span><i>✦</i>
+        <span>Mobile-first</span><i>✦</i><span>Responsive</span><i>✦</i><span>Computer Networking</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat reveal"><b data-count="5">0</b><span>Proyek web live</span></div>
+      <div class="stat reveal"><b data-count="4">0</b><span>Redesign link hub</span></div>
+      <div class="stat reveal"><b data-count="137">0</b><span>Views portofolio kampus</span></div>
+      <div class="stat reveal"><b data-count="2024">0</b><span>Angkatan TRKJ</span></div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="proyek">
+      <div class="section-head">
+        <div>
+          <span class="kicker reveal">01 — Karya</span>
+          <h2 class="reveal">Proyek Pilihan</h2>
+          <p class="reveal muted">Semua proyek sudah live. Klik <b>Live Preview</b> untuk mencoba langsung di sini tanpa pindah halaman.</p>
+        </div>
+        <div class="filters reveal" role="tablist" aria-label="Filter proyek">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="linkhub">Link Hub</button>
+          <button class="chip" data-filter="website">Website</button>
+          <button class="chip" data-filter="kampus">Kampus</button>
+        </div>
+      </div>
+      <div class="projects" id="projects"><!-- diisi JS --></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="tentang">
+      <div class="about-card reveal">
+        <span class="kicker">02 — Tentang</span>
+        <h2>Anak jaringan yang jatuh cinta sama desain web.</h2>
+        <p>
+          Di kampus saya belajar <b>Teknologi Rekayasa Komputer Jaringan (TRKJ)</b> — jaringan, server, dan
+          infrastruktur. Di luar itu saya senang membangun halaman web: mulai dari halaman pemilihan jurusan,
+          hub informasi PMB, sampai link hub untuk pesantren dan sekolah.
+        </p>
+        <p>
+          Fokus saya sederhana: <b>informasi gampang ditemukan</b>, tampilan <b>rapi di HP</b>, dan halaman
+          yang <b>ringan</b> sehingga bisa langsung di-hosting gratis lewat GitHub Pages.
+        </p>
+        <div class="skills">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span>
+          <span>UI Redesign</span><span>Link Hub</span><span>Git &amp; GitHub Pages</span>
+          <span>Computer Networking</span>
+        </div>
+      </div>
+
+      <div class="timeline reveal">
+        <span class="kicker">Perjalanan</span>
+        <ol>
+          <li>
+            <time>2024</time>
+            <h4>Masuk Politeknik IDN Bogor</h4>
+            <p>Mulai kuliah di jurusan TRKJ — Teknologi Rekayasa Komputer Jaringan.</p>
+          </li>
+          <li>
+            <time>Jun 2025</time>
+            <h4>Portofolio 1 Tahun Belajar</h4>
+            <p>Rangkuman 1 tahun belajar TRKJ, terverifikasi resmi di IDN Showcase.</p>
+          </li>
+          <li>
+            <time>2025 — 2026</time>
+            <h4>Redesign Link Hub &amp; Website</h4>
+            <p>Membangun web untuk kampus, pesantren, sekolah, dan toko rekomendasi gadget.</p>
+          </li>
+          <li class="now">
+            <time>Sekarang</time>
+            <h4>Terbuka untuk proyek berikutnya</h4>
+            <p>Butuh link hub atau landing page? Mari diskusikan.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="kontak">
+      <div class="contact-card reveal">
+        <span class="kicker">03 — Kontak</span>
+        <h2>Punya ide link hub atau website?<br /><span class="grad-text">Ayo ngobrol.</span></h2>
+        <p class="muted">Ceritakan kebutuhanmu, saya bantu rancang tampilannya.</p>
+        <div class="contact-actions" id="contact-actions"><!-- diisi JS --></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Abdul Fattah · Dibuat dengan HTML, CSS &amp; JS</span>
+      <a href="#top">Kembali ke atas ↑</a>
+    </footer>
+  </main>
+
+  <!-- ============ LINK HUB VIEW ============ -->
+  <main id="hub-view" class="view view-hub" hidden>
+    <div class="hub">
+      <div class="hub-top">
+        <button class="icon-btn" id="share-btn" aria-label="Bagikan halaman">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7 M16 6l-4-4-4 4 M12 2v13" /></svg>
+        </button>
+      </div>
+
+      <div class="hub-profile">
+        <div class="avatar">
+          <span>AF</span>
+          <i class="status" title="Aktif"></i>
+        </div>
+        <h1>Abdul Fattah</h1>
+        <p class="hub-handle">@abdulfattah105-ne</p>
+        <p class="hub-bio">Mahasiswa TRKJ · Politeknik IDN Bogor<br />Redesign link hub &amp; website 🚀</p>
+        <div class="hub-socials" id="hub-socials"><!-- diisi JS --></div>
+      </div>
+
+      <label class="hub-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+        <input type="search" id="hub-search" placeholder="Cari tautan…" autocomplete="off" />
+      </label>
+
+      <div id="hub-links"><!-- diisi JS --></div>
+      <p class="hub-empty" id="hub-empty" hidden>Tidak ada tautan yang cocok 🔍</p>
+
+      <button class="hub-back" data-set-mode="portfolio">
+        Lihat portofolio lengkap
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14 M13 6l6 6-6 6" /></svg>
+      </button>
+      <p class="hub-foot">© <span class="year"></span> Abdul Fattah</p>
+    </div>
+  </main>
+
+  <!-- ============ PREVIEW MODAL ============ -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-bar">
+        <div class="modal-dots"><i></i><i></i><i></i></div>
+        <div class="modal-url"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg><span id="modal-url"></span></div>
+        <div class="device-toggle" role="group" aria-label="Ukuran perangkat">
+          <button class="active" data-device="mobile" aria-label="Mobile">📱</button>
+          <button data-device="desktop" aria-label="Desktop">🖥️</button>
+        </div>
+        <a class="icon-btn" id="modal-open" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka di tab baru">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6 M20 4l-9 9 M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></svg>
+        </a>
+        <button class="icon-btn" data-close aria-label="Tutup">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <h3 id="modal-title" class="sr-only">Live preview</h3>
+      <div class="modal-stage">
+        <div class="frame-wrap mobile" id="frame-wrap">
+          <div class="frame-loader"><span></span>Memuat preview…</div>
+          <iframe id="modal-frame" title="Live preview" loading="lazy"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms"
+                  referrerpolicy="no-referrer"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHATSAPP ANTI-SPAM MODAL ============ -->
+  <div class="modal wa-modal" id="wa-modal" hidden>
+    <div class="modal-backdrop" data-wa-close></div>
+    <div class="wa-panel" role="dialog" aria-modal="true" aria-labelledby="wa-title">
+      <div class="wa-head">
+        <span class="wa-badge">🔒 Proteksi Anti-Bot</span>
+        <button type="button" class="icon-btn" data-wa-close aria-label="Tutup">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18" /></svg>
+        </button>
+      </div>
+      <h3 id="wa-title">Chat via WhatsApp</h3>
+      <p class="muted wa-sub">Nomor disamarkan agar aman dari bot pencari spam. Pilih topik diskusi di bawah lalu lanjut ke WhatsApp:</p>
+      <div class="wa-topics" id="wa-topics" role="group" aria-label="Topik pesan">
+        <button type="button" class="chip active" data-topic="Halo Abdul Fattah, saya lihat portofolio kamu dan ingin membuat / redesign Link Hub.">✨ Redesign Link Hub</button>
+        <button type="button" class="chip" data-topic="Halo Abdul Fattah, saya tertarik diskusi pembuatan Landing Page / Website.">🌐 Buat Website</button>
+        <button type="button" class="chip" data-topic="Halo Abdul Fattah, saya lihat portofolio kamu dan ingin berdiskusi kolaborasi proyek.">🤝 Kolaborasi</button>
+      </div>
+      <label class="wa-field">
+        <span class="sr-only">Pesan pembuka WhatsApp</span>
+        <textarea id="wa-msg" rows="3" maxlength="300">Halo Abdul Fattah, saya lihat portofolio kamu dan ingin membuat / redesign Link Hub.</textarea>
+      </label>
+      <div class="wa-actions">
+        <button type="button" class="btn btn-ghost" data-wa-close>Batal</button>
+        <button type="button" class="btn btn-primary" id="wa-go">
+          Lanjut ke WhatsApp
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7 M8 7h9v9" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

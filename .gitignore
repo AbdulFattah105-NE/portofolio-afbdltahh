@@ -1,0 +1,22 @@
+# Internal local scripts & helpers (jangan di-publish ke GitHub Pages)
+/tools/
+
+# Secrets & environment files
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+secrets.*
+
+# Editor, OS & logs
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.bak
+*.tmp
+.vscode/
+.idea/
+node_modules/

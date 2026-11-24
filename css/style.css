@@ -157,28 +157,28 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); }
 .hero-visual { position: relative; height: 580px; }
 .phones { position: absolute; inset: 0; }
 .phone {
-  position: absolute; width: 230px; aspect-ratio: 9 / 19.2; border-radius: 34px; padding: 9px;
-  background: linear-gradient(145deg, #2a2a3a, #12121c); border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 30px 80px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.04);
+  position: absolute; width: 228px; aspect-ratio: 9 / 19.2; border-radius: 34px; padding: 16px 8px 8px;
+  background: linear-gradient(145deg, #2a2a3a, #12121c); border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 30px 80px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.04);
   transition: transform .8s var(--ease);
 }
-.phone::before { content: ""; position: absolute; top: 15px; left: 50%; transform: translateX(-50%); width: 70px; height: 20px; border-radius: 20px; background: #000; z-index: 2; }
-.phone-screen { width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: var(--bg-2); position: relative; }
+.phone::before { content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); width: 46px; height: 5px; border-radius: 99px; background: rgba(255,255,255,.16); z-index: 2; }
+.phone-screen { width: 100%; height: 100%; border-radius: 25px; overflow: hidden; background: var(--bg-2); position: relative; }
 .phone-screen img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.phone.p1 { left: 50%; top: 40px; transform: translateX(-50%) rotate(0deg); z-index: 3; }
-.phone.p2 { left: 4%; top: 100px; transform: rotate(-10deg) scale(.88); z-index: 2; opacity: .9; }
-.phone.p3 { right: 4%; top: 100px; transform: rotate(10deg) scale(.88); z-index: 1; opacity: .9; }
-.hero-visual:hover .phone.p2 { transform: rotate(-14deg) scale(.9) translateX(-20px); }
-.hero-visual:hover .phone.p3 { transform: rotate(14deg) scale(.9) translateX(20px); }
+.phone.p1 { left: 50%; top: 32px; transform: translateX(-50%) rotate(0deg); z-index: 3; }
+.phone.p2 { left: 0; top: 88px; transform: rotate(-11deg) scale(.88); z-index: 2; opacity: .94; }
+.phone.p3 { right: 0; top: 88px; transform: rotate(11deg) scale(.88); z-index: 2; opacity: .94; }
+.hero-visual:hover .phone.p2 { transform: rotate(-14deg) scale(.9) translateX(-18px); }
+.hero-visual:hover .phone.p3 { transform: rotate(14deg) scale(.9) translateX(18px); }
 .hero-visual:hover .phone.p1 { transform: translateX(-50%) translateY(-10px); }
 .float-chip {
-  position: absolute; z-index: 5; padding: 9px 14px; border-radius: 14px; font-size: 13px; font-weight: 700;
-  background: rgba(20, 20, 32, .75); border: 1px solid var(--border-2); backdrop-filter: blur(10px);
-  animation: bob 5s ease-in-out infinite; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  position: absolute; z-index: 5; padding: 8px 13px; border-radius: 14px; font-size: 12.5px; font-weight: 700;
+  background: rgba(16, 16, 26, .82); border: 1px solid var(--border-2); backdrop-filter: blur(10px);
+  animation: bob 5s ease-in-out infinite; box-shadow: 0 10px 30px rgba(0,0,0,.45);
 }
-.c1 { top: 30px; left: 6%; }
-.c2 { bottom: 70px; left: 0; animation-delay: -1.6s; }
-.c3 { top: 200px; right: -2%; animation-delay: -3.2s; }
+.c1 { top: 14px; left: 4%; }
+.c2 { bottom: 26px; left: 0; animation-delay: -1.6s; }
+.c3 { top: 20px; right: 2%; animation-delay: -3.2s; }
 @keyframes bob { 50% { transform: translateY(-12px); } }
 
 /* fallback "screenshot" */
@@ -260,7 +260,7 @@ h2 { font-size: clamp(32px, 4.5vw, 52px); }
 .skills span { padding: 8px 14px; border-radius: 12px; font-size: 13px; font-weight: 600; border: 1px solid var(--border-2); background: rgba(255,255,255,.03); transition: all .25s; }
 .skills span:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
 .timeline ol { list-style: none; margin: 10px 0 0; padding: 0 0 0 22px; position: relative; }
-.timeline ol::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--violet), var(--cyan), var(--lime)); border-radius: 2px; }
+.timeline ol::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--lime), var(--cyan), var(--violet)); border-radius: 2px; }
 .timeline li { position: relative; padding: 0 0 26px 18px; }
 .timeline li:last-child { padding-bottom: 0; }
 .timeline li::before { content: ""; position: absolute; left: -22px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--cyan); }

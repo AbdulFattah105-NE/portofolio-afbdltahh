@@ -47,7 +47,7 @@
     const num = P.waBytes.map((b) => String.fromCharCode((b ^ P.waKey) & 0xff)).join("");
     return /^\d{10,15}$/.test(num) ? num : "";
   };
-  const shot = (p) => `assets/shots/${encodeURIComponent(p.id)}.png`;
+  const shot = (p) => `assets/shots/${encodeURIComponent(p.id)}.png?v=2`;
 
   const ICON = {
     eye: '<svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
@@ -69,11 +69,15 @@
   const screen = (p, eager = false) =>
     `<div class="phone-screen"><div class="shot-fallback" style="background:hsl(${+p.hue || 0} 40% 14%)">${esc(p.emoji)}</div>${imgTag(p, eager)}</div>`;
 
-  /* ---------------- Render: hero phones ---------------- */
+  /* ---------------- Render: hero phones (Kiri: SDIT MK, Tengah: Politeknik, Kanan: Al-Wafa) ---------------- */
   const byId = (id) => PROJECTS.find((p) => p.id === id);
-  const heroPick = ["sdit", "alwafa", "pmb"].map(byId).filter(Boolean);
-  $("#hero-phones").innerHTML = heroPick
-    .map((p, i) => `<div class="phone p${i + 1}">${screen(p, true)}</div>`)
+  const heroSlots = [
+    { cls: "p2", p: byId("sdit") },   // Kiri: SDIT Menara Kuwait
+    { cls: "p1", p: byId("pmb") },    // Tengah: Politeknik IDN
+    { cls: "p3", p: byId("alwafa") }, // Kanan: Pesantren Al-Wafa
+  ].filter((s) => s.p);
+  $("#hero-phones").innerHTML = heroSlots
+    .map((s) => `<div class="phone ${s.cls}">${screen(s.p, true)}</div>`)
     .join("");
 
   /* ---------------- Render: project cards ---------------- */

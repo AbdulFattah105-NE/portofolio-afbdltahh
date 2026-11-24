@@ -53,7 +53,7 @@
     },
     {
       id: "alwafa",
-      title: "Pesantren BS Al-Wafa Setu Bekasi",
+      title: "Pesantren Al-Wafa Setu Bekasi",
       type: "Redesign Link Hub",
       desc: "Hub link resmi SPMB untuk SMP & MA Boarding School — brosur, WhatsApp, email, dan program unggulan Tahfizh Al-Qur'an & Bahasa Arab.",
       url: "https://abdulfattah105-ne.github.io/alwafa-web/",

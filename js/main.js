@@ -79,6 +79,11 @@
   /* ---------------- Render: project cards ---------------- */
   $("#projects").innerHTML = PROJECTS.map((p, i) => {
     const canEmbed = p.embed !== false && Boolean(safePreviewUrl(p.url));
+    const previewBtn = canEmbed
+      ? `<button type="button" class="btn btn-soft" data-preview="${esc(p.id)}">${ICON.eye} Live Preview</button>`
+      : p.previewUrl
+        ? `<a class="btn btn-soft" href="${esc(safeUrl(p.previewUrl))}" ${EXT}>${ICON.eye} Link Preview</a>`
+        : "";
     return `
     <article class="card reveal ${p.featured ? "featured" : ""}" style="--h:${+p.hue || 0}" data-id="${esc(p.id)}" data-cat="${esc(p.category.join(" "))}">
       <div class="card-media">
@@ -92,7 +97,7 @@
         <p>${esc(p.desc)}</p>
         <div class="tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
         <div class="card-actions">
-          ${canEmbed ? `<button type="button" class="btn btn-soft" data-preview="${esc(p.id)}">${ICON.eye} Live Preview</button>` : ""}
+          ${previewBtn}
           <a class="btn btn-ghost" href="${esc(safeUrl(p.url))}" ${EXT}>Kunjungi ${ICON.ext}</a>
         </div>
       </div>
@@ -124,7 +129,21 @@
   };
 
   const groups = [
-    { title: "⭐ Portofolio Kampus", items: [byId("poltek")], highlight: true },
+    {
+      title: "⭐ Portofolio Kampus",
+      items: [
+        byId("poltek"),
+        {
+          title: "Detail Karya — 1 Tahun Belajar TRKJ",
+          type: "Dokumentasi 10 Bagian · MTCNA, MTCRE & CCNA",
+          url: byId("poltek")?.previewUrl,
+          emoji: "📘",
+          hue: 220,
+          tags: ["detail", "trkj", "mikrotik", "cisco"],
+        },
+      ],
+      highlight: true,
+    },
     { title: "🔗 Redesign Link Hub", items: ["pmb", "alwafa", "sdit", "bantu"].map(byId) },
     { title: "🌐 Website", items: [byId("jurusan")] },
     {
